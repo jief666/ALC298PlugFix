@@ -9,7 +9,7 @@
     * `hda-verb`是linux下面的`alsa-project`的一条命令，它的作用是发送HD-audio命令 
 
 ## 如何使用?
-1. 克隆git
+1. 克隆git
 ```bash
     git clone https://github.com/jardenliu/ALCPlugFix.git
 ```
@@ -18,4 +18,4 @@
 # 鸣谢
 - [goodwin](https://github.com/goodwin/ALCPlugFix) ALCPlugFix作者
 - [daliansky](https://github.com/daliansky/ALCPlugFix) 提供了修改方法
-- [Rehabman @EAPD-Codec-Commander](https://github.com/RehabMan/EAPD-Codec-Commander ALC298)提供的节点信息
+- [Rehabman @EAPD-Codec-Commander](https://github.com/RehabMan/EAPD-Codec-Commander ALC298)提供的节点信息
