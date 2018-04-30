@@ -106,8 +106,9 @@ int main(int argc, const char * argv[]) {
         sourceAddr.mScope = kAudioDevicePropertyScopeOutput;
         sourceAddr.mElement = kAudioObjectPropertyElementMaster;
 
-        NSString *output1 = [@"hda-verb 0x18 SET_PIN_WIDGET_CONTROL 0x20" runAsCommand];
-        NSString *output2 = [@"hda-verb 0x1a SET_PIN_WIDGET_CONTROL 0x20" runAsCommand];
+        NSString *output1 = [@"hda-verb 0x18 SET_PIN_WIDGET_CONTROL 0x22" runAsCommand];
+        NSString *output2 = [@"hda-verb 0x1a SET_PIN_WIDGET_CONTROL 0x23" runAsCommand];
+        NSString *output3 = [@"hda-verb 0x21 SET_UNSOLICITED_ENABLE 0x83" runAsCommand];
 
         AudioObjectAddPropertyListenerBlock(defaultDevice, &sourceAddr, dispatch_get_global_queue (DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(UInt32 inNumberAddresses, const AudioObjectPropertyAddress * inAddresses) {
 
@@ -117,13 +118,15 @@ int main(int argc, const char * argv[]) {
             if (bDataSourceId == 'ispk') {
                 // Recognized as internal speakers
                 NSLog(@"Headphones removed! Fixing!");
-                NSString *output1 = [@"hda-verb 0x18 SET_PIN_WIDGET_CONTROL 0x20" runAsCommand];
-                NSString *output2 = [@"hda-verb 0x1a SET_PIN_WIDGET_CONTROL 0x20" runAsCommand];
+                NSString *output1 = [@"hda-verb 0x18 SET_PIN_WIDGET_CONTROL 0x22" runAsCommand];
+                NSString *output2 = [@"hda-verb 0x1a SET_PIN_WIDGET_CONTROL 0x23" runAsCommand];
+                NSString *output3 = [@"hda-verb 0x21 SET_UNSOLICITED_ENABLE 0x83" runAsCommand];
             } else if (bDataSourceId == 'hdpn') {
                 // Recognized as headphones
                 NSLog(@"Headphones inserted! Fixing!");
-                NSString *output1 = [@"hda-verb 0x18 SET_PIN_WIDGET_CONTROL 0x20" runAsCommand];
-                NSString *output2 = [@"hda-verb 0x1a SET_PIN_WIDGET_CONTROL 0x20" runAsCommand];
+                NSString *output1 = [@"hda-verb 0x18 SET_PIN_WIDGET_CONTROL 0x22" runAsCommand];
+                NSString *output2 = [@"hda-verb 0x1a SET_PIN_WIDGET_CONTROL 0x23" runAsCommand];
+                NSString *output3 = [@"hda-verb 0x21 SET_UNSOLICITED_ENABLE 0x83" runAsCommand];
             }
         });
 
