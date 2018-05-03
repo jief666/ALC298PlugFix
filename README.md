@@ -1,5 +1,5 @@
-# ALCPlugFix
-> 此版本适用于 ALC298
+# AL298PlugFix
+> ALCPlugFix-298版本仅适用于 ALC298
 
 
 ## ALCPlugFix能做什么?(摘自daliansky)
@@ -11,7 +11,7 @@
 ## 如何使用?
 1. 克隆git
 ```bash
-    git clone https://github.com/jardenliu/ALCPlugFix.git
+    git clone https://github.com/jardenliu/ALC298PlugFix.git
 ```
 2. 双击运行`alc_fix/install双击自动安装.command`即可。
 
