@@ -1,4 +1,4 @@
-ALCPlugFix
+ALCPlugFix - Use for ALC 257
 ----------
 
 This is an improved version of ALCPlugFix from [goodwin](https://github.com/goodwin/ALCPlugFix).
@@ -19,7 +19,7 @@ The improvement include:
 
 Install
 -------
-By default it's code command is for Lenovo ThinkPad(s) with Realtek ALC3232 Audio Codec with Combo Jack, you may need to change that in `fixAudio` function.
+By default it's code command is for Lenovo ThinkPad(s) with Realtek ALC257 Audio Codec with Combo Jack, you may need to change that in `fixAudio` function.
 
 Running `sh ./install.sh` will install to `/user/local/bin`.
 
@@ -27,11 +27,7 @@ By default it search `hda-verb` in current work directory, if not found it will 
 
 Compatible Laptops
 ------------------
-- Lenovo ThinkPad T440P
-- Lenovo ThinkPad T440
-- Lenovo ThinkPad T440S
-- Lenovo ThinkPad L440
-- Lenovo ThinkPad X240
+- Lenovo Ideapad L340 Gaming
 
 Build
 -----
