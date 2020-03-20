@@ -19,7 +19,7 @@ The improvement include:
 
 Install
 -------
-By default it's code command is for Lenovo ThinkPad(s) with Realtek ALC257 Audio Codec with Combo Jack, you may need to change that in `fixAudio` function.
+By default it's code command is for Lenovo Ideapad L340 with Realtek ALC257 Audio Codec with Combo Jack, you may need to change that in `fixAudio` function.
 
 Running `sh ./install.sh` will install to `/user/local/bin`.
 
