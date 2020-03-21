@@ -134,13 +134,13 @@ void sigHandler(int signo)
 void fixAudio(){
     NSLog(@"ALCPlugFix::Fixing using HDA-VERB...");
     NSString *output1 = [[binPrefix stringByAppendingString:@"hda-verb 0x19 SET_PIN_WIDGET_CONTROL 0x25"] runAsCommand];
-    //NSString *output2 = [[binPrefix stringByAppendingString:@"hda-verb 0x15 SET_UNSOLICITED_ENABLE 0x83"] runAsCommand];
+    NSString *output2 = [[binPrefix stringByAppendingString:@"hda-verb 0x21 SET_UNSOLICITED_ENABLE 0x83"] runAsCommand];
 }
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 
-        NSLog(@"ALCPlugFix v1.6");
+        NSLog(@"ALCPlugFix v1.6 - Using HDA-VERB");
         keepRunning = false;
 
         binPrefix = @"";
