@@ -1,4 +1,4 @@
-ALCPlugFix - Use for ALC 257
+ALCPlugFix - Use for ALC 256
 ----------
 
 This is an improved version of ALCPlugFix from [goodwin](https://github.com/goodwin/ALCPlugFix).
@@ -19,7 +19,7 @@ The improvement include:
 
 Install
 -------
-By default it's code command is for Lenovo Ideapad L340 with Realtek ALC257 Audio Codec with Combo Jack, you may need to change that in `fixAudio` function.
+By default its code command is for Huawei Matebook X Pro (2018) with Realtek ALC256 Audio Codec with Combo Jack, you may need to change that in `fixAudio` function.
 
 Running `sh ./install.sh` will install to `/user/local/bin`.
 
@@ -27,7 +27,7 @@ By default it search `hda-verb` in current work directory, if not found it will 
 
 Compatible Laptops
 ------------------
-- Lenovo Ideapad L340 Gaming
+- Huawei Matebook X Pro (2018)
 
 Build
 -----
