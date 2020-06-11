@@ -11,7 +11,7 @@
 #import <AppKit/AppKit.h>
 
 
-void fixAudio();
+void fixAudio(void);
 NSString *binPrefix;
 
 @protocol DaemonProtocol
@@ -89,7 +89,7 @@ NSString *binPrefix;
 - (void)performWork
 {
     // This method is called periodically to perform some routine work
-    NSLog(@"Performing periodical work");
+//    NSLog(@"Performing periodical work");
 //    fixAudio();
 
 }
@@ -133,8 +133,9 @@ void sigHandler(int signo)
 
 void fixAudio(){
     NSLog(@"ALCPlugFix::Fixing using HDA-VERB...");
-    NSString *output1 = [[binPrefix stringByAppendingString:@"hda-verb 0x13 SET_PIN_WIDGET_CONTROL 0x20"] runAsCommand];
-    NSString *output2 = [[binPrefix stringByAppendingString:@"hda-verb 0x1a SET_UNSOLICITED_ENABLE 0x24"] runAsCommand];
+    [[binPrefix stringByAppendingString:@"hda-verb 0x18 SET_PIN_WIDGET_CONTROL 0x22"] runAsCommand];
+    [[binPrefix stringByAppendingString:@"hda-verb 0x1a SET_PIN_WIDGET_CONTROL 0x23"] runAsCommand];
+    [[binPrefix stringByAppendingString:@"hda-verb 0x21 SET_UNSOLICITED_ENABLE 0x83"] runAsCommand];
 }
 
 int main(int argc, const char * argv[]) {
@@ -181,43 +182,17 @@ int main(int argc, const char * argv[]) {
         sourceAddr.mScope = kAudioDevicePropertyScopeOutput;
         sourceAddr.mElement = kAudioObjectPropertyElementMaster;
 
-<<<<<<< HEAD
-        NSString *output1 = [@"hda-verb 0x18 SET_PIN_WIDGET_CONTROL 0x22" runAsCommand];
-        NSString *output2 = [@"hda-verb 0x1a SET_PIN_WIDGET_CONTROL 0x23" runAsCommand];
-        NSString *output3 = [@"hda-verb 0x21 SET_UNSOLICITED_ENABLE 0x83" runAsCommand];
-=======
         AudioObjectPropertyListenerBlock audioObjectPropertyListenerBlock = ^(UInt32 inNumberAddresses, const AudioObjectPropertyAddress *inAddresses) {
             // Audio device have changed
             NSLog(@"Audio device changed!");
             fixAudio();
         };
->>>>>>> refs/remotes/github.com/profzei/ALCPlugFix.git/master
 
         OSStatus osStatus;
 
-<<<<<<< HEAD
-            UInt32 bDataSourceId = 0;
-            UInt32 bDataSourceIdSize = sizeof(UInt32);
-            AudioObjectGetPropertyData(defaultDevice, inAddresses, 0, NULL, &bDataSourceIdSize, &bDataSourceId);
-            if (bDataSourceId == 'ispk') {
-                // Recognized as internal speakers
-                NSLog(@"Headphones removed! Fixing!");
-                NSString *output1 = [@"hda-verb 0x18 SET_PIN_WIDGET_CONTROL 0x22" runAsCommand];
-                NSString *output2 = [@"hda-verb 0x1a SET_PIN_WIDGET_CONTROL 0x23" runAsCommand];
-                NSString *output3 = [@"hda-verb 0x21 SET_UNSOLICITED_ENABLE 0x83" runAsCommand];
-            } else if (bDataSourceId == 'hdpn') {
-                // Recognized as headphones
-                NSLog(@"Headphones inserted! Fixing!");
-                NSString *output1 = [@"hda-verb 0x18 SET_PIN_WIDGET_CONTROL 0x22" runAsCommand];
-                NSString *output2 = [@"hda-verb 0x1a SET_PIN_WIDGET_CONTROL 0x23" runAsCommand];
-                NSString *output3 = [@"hda-verb 0x21 SET_UNSOLICITED_ENABLE 0x83" runAsCommand];
-            }
-        });
-=======
         do {
             AudioObjectGetPropertyData(kAudioObjectSystemObject, &defaultAddr, 0, NULL, &defaultSize, &defaultDevice);
             osStatus = AudioObjectAddPropertyListenerBlock(defaultDevice, &sourceAddr, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), audioObjectPropertyListenerBlock);
->>>>>>> refs/remotes/github.com/profzei/ALCPlugFix.git/master
 
             if (osStatus != 0){
                 // OS Status 560947818 is 'normal' as we are trying to hook audio object before login screen.

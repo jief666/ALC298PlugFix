@@ -1,4 +1,8 @@
 #!/bin/bash
+SCRIPT_ABS_FILENAME=`perl -e 'use Cwd "abs_path";print abs_path(shift)' "${BASH_SOURCE[0]:-${(%):-%x}}"`
+SCRIPT_DIR=`dirname "$SCRIPT_ABS_FILENAME"`
+
+cd "$SCRIPT_DIR"
 
 DAEMON_PATH=/Library/LaunchDaemons/
 BIN_PATH=/usr/local/bin/
