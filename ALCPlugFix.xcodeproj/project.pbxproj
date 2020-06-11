@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C761DB422710250004042C9 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C761DB322710250004042C9 /* AppKit.framework */; };
 		4CE328391DCA9A59002A53ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE328381DCA9A59002A53ED /* main.m */; };
+		D96DD8E9562DA5C656BFF568 /* README.MD in Sources */ = {isa = PBXBuildFile; fileRef = D96BFF009CB392050D064A88 /* README.MD */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +25,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4C761DB322710250004042C9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		4CE328351DCA9A59002A53ED /* ALCPlugFix */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ALCPlugFix; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE328381DCA9A59002A53ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D96BFF009CB392050D064A88 /* README.MD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.MD; sourceTree = "<group>"; };
+		DFD18AC8239F002300E9DD63 /* alc_fix */ = {isa = PBXFileReference; lastKnownFileType = folder; path = alc_fix; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,17 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C761DB422710250004042C9 /* AppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C761DB222710250004042C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C761DB322710250004042C9 /* AppKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4CE3282C1DCA9A59002A53ED = {
 			isa = PBXGroup;
 			children = (
+				DFD18AC8239F002300E9DD63 /* alc_fix */,
 				4CE328371DCA9A59002A53ED /* ALCPlugFix */,
 				4CE328361DCA9A59002A53ED /* Products */,
+				4C761DB222710250004042C9 /* Frameworks */,
+				D96BFF009CB392050D064A88 /* README.MD */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,7 +105,7 @@
 		4CE3282D1DCA9A59002A53ED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Oleksandr Stoyevskyy";
 				TargetAttributes = {
 					4CE328341DCA9A59002A53ED = {
@@ -99,10 +116,11 @@
 			};
 			buildConfigurationList = 4CE328301DCA9A59002A53ED /* Build configuration list for PBXProject "ALCPlugFix" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 4CE3282C1DCA9A59002A53ED;
 			productRefGroup = 4CE328361DCA9A59002A53ED /* Products */;
@@ -120,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CE328391DCA9A59002A53ED /* main.m in Sources */,
+				D96DD8E9562DA5C656BFF568 /* README.MD in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +265,7 @@
 				4CE3283E1DCA9A59002A53ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
